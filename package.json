@@ -1,0 +1,57 @@
+{
+    "name": "ets-log210-typescript-node-api",
+    "version": "2.0.1",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "tsc -b --verbose && shx --verbose cp -ru public dist/",
+        "start": "node dist/index.js",
+        "bs": "npm run build && open http://localhost:3000 && npm run start",
+        "watch": "jest --watch --coverage test",
+        "test": "jest --env=node --colors --coverage test",
+        "uml-classes-puml": "tplant -i src/app.ts -A -o docs/modeles/App.puml",
+        "uml-classes-svg": "tplant -i src/app.ts -A -o docs/modeles/App.svg",
+        "refresh": "rm -rf ./node_modules ./package-lock.json && npm install"
+    },
+    "nodemonConfig": {
+        "ignore": [
+            "**/*.test.ts",
+            "**/*.spec.ts",
+            ".git",
+            "node_modules"
+        ],
+        "watch": [
+            "src"
+        ],
+        "exec": "npm run build && npm start",
+        "ext": "ts"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/debug": "^4.1.7",
+        "@types/express": "^4.17.13",
+        "@types/jest": "^28.1.6",
+        "@types/morgan": "^1.9.3",
+        "@types/node": "^18.6.3",
+        "@types/supertest": "^2.0.12",
+        "jest": "^28.1.3",
+        "jest-extended": "^3.0.2",
+        "nodemon": "^2.0.19",
+        "shx": "^0.3.4",
+        "supertest": "^6.2.4",
+        "tplant": "^3.1.0",
+        "ts-jest": "^28.0.7",
+        "ts-node": "^10.9.1",
+        "typescript": "^4.7.4"
+    },
+    "dependencies": {
+        "debug": "^4.3.4",
+        "express": "^4.18.1",
+        "express-flash-plus": "^0.0.7",
+        "md5": "^2.3.0",
+        "morgan": "^1.10.0",
+        "pug": "^3.0.2"
+    }
+}
