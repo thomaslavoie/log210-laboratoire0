@@ -120,14 +120,14 @@ Vous pouvez cocher chaque étape dans la liste suivante:
 
 - [ ] exécuter les tests
 
-  - Dans le terminal, taper `npx jest --colors lab0.test.ts` pour exécuter les tests du lab 0.
+  - Dans le terminal, taper `npm run test` pour exécuter les tests du lab 0.
 
     Normalement, on devrait voir les messages comme:
 
     ```text
     ...
-    Test Suites: 16 failed, 16 total
-    Tests:       45 failed, 1 passed, 46 total
+    Test Suites: 15 failed, 1 passed, 16 total
+    Tests:       41 failed, 5 passed, 46 total
     Snapshots:   0 total
     Time:        9.908 s
     Ran all test suites matching /lab0.test.ts/i.
@@ -229,7 +229,7 @@ Vous pouvez cocher chaque étape dans la liste suivante:
 
 - [ ] exécuter le serveur sur localhost
 
-  - Dans le terminal, `npm start`
+  - Dans le terminal, `npm run build && npm start`
 
 <!-- markdown-link-check-disable-next-line -->
 - [ ] exécuter l'application avec un navigateur moderne à l'URL [http://localhost:3000](http://localhost:3000)
@@ -385,7 +385,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 
 - [ ] ajouter de nouveaux cas de test pour Redémarrer (Jest/SuperTest)
 
-  - ouvrir le fichier `test/routes/jeuRouter-redemarrerJeu-lab0.test.ts`
+  - ouvrir le fichier `test/lab0/routes/jeuRouter-redemarrerJeu-lab0.test.ts`
 
   - y créer une suite de tests nommée `'GET /api/v1/jeu/redemarrerJeu'` avec `describe`
   

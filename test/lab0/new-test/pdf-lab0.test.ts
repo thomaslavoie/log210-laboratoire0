@@ -11,7 +11,7 @@ describe('docs/lab0.pdf', () => {
         expect(content).toBeTruthy();
     });
 
-    it("devrait trouver que le fichier docs/labo.pdf est valide", () => {
+    it("devrait trouver que le fichier docs/lab0.pdf est valide", () => {
         expect(content.lastIndexOf("%PDF-")).toEqual(0);
         expect(content.lastIndexOf("%%EOF")).toBeGreaterThan(-1);
     });

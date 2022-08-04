@@ -38,7 +38,7 @@ L'éditeur [Visual Studio Code](https://code.visualstudio.com/) est très utile,
 
      <p>
 
-    ![GIF animé de la fonctionnalité de l'application Jeu de Dés](docs/animation/jouer.gif)
+    ![GIF animé de la fonctionnalité de l'application Jeu de Dés](animation/jouer.gif)
     </p>
    </details>
 2. Lancer les tests (pas besoin de lancer le serveur d'abord) - `npm test`
@@ -49,7 +49,7 @@ Regarder la section "**scripts**" dans le fichier [package.json](package.json) p
 ## Développement piloté par les tests (TDD)
 <p>
 
-![États du TDD](docs/modeles/tdd.svg)
+![États du TDD](modeles/tdd.svg)
 
 Le développement piloté par les tests (Test-Driven Development, TDD) est une façon de développer des logiciels en commençant par les tests. Il y a plusieurs avantages de cette façon de faire et ce squelette supporte la méthodologie.
 
@@ -132,12 +132,12 @@ Pour plus d'informations au sujet de l'utilisation des breakpoints dans WebStorm
 
 Dans un design favorisant la maintenabilité, on évite que la couche Présentation ait la responsabilité de gérer les évènements système (opérations système). Larman présente dans son livre un exemple avec un JFrame (en Java Swing) à la figure F16.24. On l'adapte ici au contexte d'un service Web dans le framework Express (Node.js):
 
-![Diagramme de séparation des couches avec une opération système envoyée au contrôleur GRASP](docs/modeles/figureF16.24-web.svg)
+![Diagramme de séparation des couches avec une opération système envoyée au contrôleur GRASP](modeles/figureF16.24-web.svg)
 
 Dans la figure ci-dessus, l'objet `:JeuDeDes` (qui est un objet en dehors de la couche présentation) reçoit l'opération système `demarrerJeu(nom)` selon le principe GRASP Contrôleur. Ce squelette respecte cette séparation.
 
 Voici la même figure, mais sous forme de diagramme de séquence avec l'acteur. On y voit tous les détails sordides de l'implémentation avec Node Express. **Notez que cette figure est présentée pour faciliter la compréhension seulement. On ne produit pas ce genre de diagramme dans la méthodologie**.
-![Une opération système du DSS est envoyée par la couche présentation et reçue par un objet (le contrôleur GRASP) dans la couche domaine](docs/modeles/dss-details-demarrerJeu.svg)
+![Une opération système du DSS est envoyée par la couche présentation et reçue par un objet (le contrôleur GRASP) dans la couche domaine](modeles/dss-details-demarrerJeu.svg)
 
 ## Artefacts d'analyse et de conception
 
@@ -155,14 +155,14 @@ Voici la même figure, mais sous forme de diagramme de séquence avec l'acteur. 
 1. ~~Le Système affiche un tableau de bord avec les noms des joueurs et le ratio des parties gagnées (nombre de fois gagné / nombre de lancers).~~
 
 ### Diagramme de cas d'utilisation
-![Diagramme de cas d'utilisation](docs/modeles/dcu.svg)
+![Diagramme de cas d'utilisation](modeles/dcu.svg)
 
 ![Diagramme de cas d'utilisation]()
 ### Modèle du domaine
-![Diagramme de classe du Modèle du domaine](docs/modeles/MDD.svg)
+![Diagramme de classe du Modèle du domaine](modeles/MDD.svg)
 
 ### Diagramme de séquence système (DSS)
-![Diagramme de séquence système](docs/modeles/dss-jouer.svg)
+![Diagramme de séquence système](modeles/dss-jouer.svg)
 
 ### Contrats d'opération et Réalisations de cas d'utilisation (RDCU)
 
@@ -175,7 +175,7 @@ Voici la même figure, mais sous forme de diagramme de séquence avec l'acteur. 
 - j a été associé à JeuDeDes
 
 **RDCU**
-![Diagramme de séquence, demarrerJeu](docs/modeles/rdcu-demarrerJeu.svg)
+![Diagramme de séquence, demarrerJeu](modeles/rdcu-demarrerJeu.svg)
 
 #### Opération: `jouer(nom:String)`
 
@@ -187,14 +187,14 @@ Voici la même figure, mais sous forme de diagramme de séquence avec l'acteur. 
 - j.nbLancersGagnés a été incrémenté si la totale de d1.valeur et d2.valeur est égale à 7
 
 **RDCU**
-![Diagramme de séquence, jouer](docs/modeles/rdcu-jouer.svg)
+![Diagramme de séquence, jouer](modeles/rdcu-jouer.svg)
 
 #### Opération: `terminerJeu(nom:String)`
 
 **Postconditions**
 
 - L'instance j de Joueur a été supprimée sur une base de correspondance avec nom
-![Diagramme de séquence, terminerJeu](docs/modeles/rdcu-terminerJeu.svg)
+![Diagramme de séquence, terminerJeu](modeles/rdcu-terminerJeu.svg)
 
 
 ### Diagramme de classe logiciels
@@ -203,5 +203,5 @@ L'extension typescript TPlant permet d'exécuter une technique de rétro-ingéni
 npm run uml-classes-puml
 npm run uml-classes-svg
 ```
-![diagramme de classe logiciels](docs/modeles/App.svg)
+![diagramme de classe logiciels](modeles/App.svg)
 
