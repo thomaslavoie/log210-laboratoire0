@@ -4,8 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "init-for-teacher-only": "git remote add squelette https://github.com/yvanross/log210-squelette.git || true && git checkout -b squelette squelette/main || true && git checkout main && git checkout squelette src test public views docs && git checkout laboratoire0 test",
-        "clean-for-teacher-only": "rm -rf coverage dist docs public src test views",
+        "init-for-teacher-only": "git remote add squelette https://github.com/yvanross/log210-squelette.git || true && git checkout -b squelette squelette/main || true && git checkout main && git checkout squelette src test public views docs",
+        "clean-for-teacher-only": "rm -rf coverage dist docs/models docs/animation docs/squelette.md public src test views",
         "build": "tsc -b --verbose && shx --verbose cp -ru public dist/",
         "start": "node dist/index.js",
         "bs": "npm run build && open http://localhost:3000 && npm run start",
