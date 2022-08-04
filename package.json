@@ -4,7 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "init": "git remote add squelette https://github.com/yvanross/log210-squelette.git && git checkout -b squelette squelette/main && git checkout main && git checkout squelette src test public views docs && git checkout laboratoire0 test",
+        "init-for-teacher-only": "git remote add squelette https://github.com/yvanross/log210-squelette.git || true && git checkout -b squelette squelette/main || true && git checkout main && git checkout squelette src test public views docs && git checkout laboratoire0 test",
+        "clean-for-teacher-only": "rm -rf coverage dist docs public src test views",
         "build": "tsc -b --verbose && shx --verbose cp -ru public dist/",
         "start": "node dist/index.js",
         "bs": "npm run build && open http://localhost:3000 && npm run start",
@@ -16,8 +17,7 @@
         "test-squelette": "jest --colors --coverage \"test/squelette\"",
         "uml-classes-puml": "tplant -i src/app.ts -A -o docs/modeles/App.puml",
         "uml-classes-svg": "tplant -i src/app.ts -A -o docs/modeles/App.svg",
-        "refresh": "rm -rf ./node_modules ./package-lock.json && npm install",
-        "clean": "rm -rf coverage dist docs public src test views"
+        "refresh": "rm -rf ./node_modules ./package-lock.json && npm install"
     },
     "nodemonConfig": {
         "ignore": [
