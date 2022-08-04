@@ -196,12 +196,3 @@ Voici la même figure, mais sous forme de diagramme de séquence avec l'acteur. 
 - L'instance j de Joueur a été supprimée sur une base de correspondance avec nom
 ![Diagramme de séquence, terminerJeu](modeles/rdcu-terminerJeu.svg)
 
-
-### Diagramme de classe logiciels
-L'extension typescript TPlant permet d'exécuter une technique de rétro-ingénierie en générant le diagramme de classe logiciels à partir du code. Vous pouvez utiliser les deux script suivants pour générer le fichier App.puml ou App.svg que vous retrouverez dans le répertoire doc/modeles.
-```shell
-npm run uml-classes-puml
-npm run uml-classes-svg
-```
-![diagramme de classe logiciels](modeles/App.svg)
-
