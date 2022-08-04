@@ -1,8 +1,8 @@
 import supertest from 'supertest';
 import 'jest-extended';
 import 'jest';
-import app from '../../src/app';
-import { jeuRoutes } from "../../src/routes/jeuRouter";
+import app from '../../../src/app';
+import { jeuRoutes } from "../../../src/routes/jeuRouter";
 
 const request = supertest(app);
 

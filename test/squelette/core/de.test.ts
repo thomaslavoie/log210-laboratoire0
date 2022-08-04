@@ -1,5 +1,5 @@
 import 'jest-extended';
-import { De } from '../../src/core/de';
+import { De } from '../../../src/core/de';
 
 const de = new De();
 
