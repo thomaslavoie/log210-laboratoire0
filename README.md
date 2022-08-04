@@ -1,6 +1,6 @@
 <!-- 
-  Le lab0 dépend du squelette. Il faut actualiser le squelette en premier (le cas échéant) et en faire un merge.
-  Voir https://stackoverflow.com/a/56577320/1168342 pour les détails. Ça marche bien.
+  Note pour l'enseignant:  pour faire une mise à jour suite à la mise à jour du squelette.  
+  npm run install-squelette
   -->
 
 # LOG210 - Lab 0 - Tutoriel sur les technologies
