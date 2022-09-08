@@ -1,4 +1,9 @@
 # Squelette pour un API simple dans Node, Express et TypeScript
+  
+  Entrer votre nom : 
+  Entrer votre courriel:
+  Entrer votre code moodle:
+  Entrer l'identifiant de votre compte github:
 
 ## Introduction
 
