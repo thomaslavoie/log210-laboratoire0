@@ -276,7 +276,8 @@ Vous pouvez cocher chaque étape dans la liste suivante:
 La documentation des fonctionnalités se trouve dans le fichier [docs/squelette.md](docs/squelette.md). Dans cette étape, vous devez:
 
 - [ ] dans le fichier `docs/squelette.md` qui sert de documentation, ajouter les informations pour vous identifier dans la section **Identification de l'étudiant**.  
-  Vérifier le travail avec le test, `npx jest --colors dcu-puml-lab0.test.ts`
+  <s>Vérifier le travail avec le test, `npx jest --colors dcu-puml-lab0.test.ts`</s>
+  Vérifier le travail avec le test, `npx jest --colors lab0/squelette/identification-lab0.test.ts`
 
 - [ ] dans le fichier `docs/squelette.md`, ajouter le cas d'utilisation *Redémarrer* (texte) juste après [le texte du cas d'utilisation *Jouer aux dés*](docs/squelette.md#jouer-aux-dés):
 
