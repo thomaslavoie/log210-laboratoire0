@@ -421,7 +421,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/squelette.
 
 - [ ] ajouter une nouvelle route, dans `src/routes/jeuRouter.ts` (Express)
 
-  - ajouter la fonction `redemarrerJeu`, juste avant la fonction `init()`
+  - ajouter la fonction `redemarrerJeu`, juste avant la définition de la fonction `init()`
 
     Elle doit :
     - avoir les mêmes paramètres que les autres fonctions.
