@@ -369,7 +369,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/squelette.
   Faire un diagramme en PlantUML qui ressemble à ceci:  
   ![DSS pour le scénario Redémarrer](https://www.plantuml.com/plantuml/svg/0/NOynQWD134NxEOLmvHGXlJ6B0waCQRAGNin-6v4TpKRI52RuFl4vzcAPf4c8Yjyy_d_euC4MhSp9tqGNDYxaSPdHqoJ_8nDEtEOuLGtb0dg5JQpyjult1isWZqJzdk7EPppESbRAq82bQmg9BdWQHrfgC_gMvVMcR59fByCBflLMs0osVv0XSOvgjDaTQqEp3R5JJbqNacLXZOx6YyVwMV03FUNxmMb7zZjqHDlU9Jf0f_xI5m00 "DSS pour le scénario Redémarrer")
 
-- [ ] prendre connaissance des postconditions du contrat d'opération
+- [ ] prendre connaissance des postconditions du contrat d'opération. Voir: `docs/squelette.md`
 
   > Toutes les instances de Joueur en cours ont été supprimées.
 
@@ -400,7 +400,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/squelette.
 
     Le test doit appeler la route `GET /api/v1/jeu/redemarrerJeu`, qui correspond à l'opération système `redemarrerJeu` du DSS. Puisque l'opération n'a aucun retour, le test doit uniquement valider le succès de l'opération, c'est-à-dire, que le code HTTP (`status`) est 200 et que la réponse est du `JSON`.
 
-  - y créer un autre test pour valider la postcondition du contrat d'opération.
+  - y créer un autre test pour valider la postcondition du contrat d'opération (`docs/squelette.md`). 
 
     Le test doit vérifier qu'il n'y a plus de joueurs.
 
@@ -521,7 +521,7 @@ Il existe un lien dans la barre de navigation «Classement» pour la page `/stat
 
 ### 7. Pratiquer ce qui a été appris
 
-- [ ] Modifier le cas d'utilisation *Jouer aux dés* pour que le joueur lance **trois** dés plutôt que deux et la condition pour gagner soit que le *total soit inférieur ou égal à 10*. Il faut passer par toutes les étapes, y compris modifier le MDD, les contrats, les RDCU, les tests et le code. Cependant, cette fois-ci vous devez vous débrouiller, en vous référant à des étapes plus haut.
+- [ ] Modifier le cas d'utilisation *Jouer aux dés* pour que le joueur lance **trois** dés plutôt que deux et la condition pour gagner soit que le *total soit inférieur ou égal à 10*. Il faut passer par toutes les étapes, y compris modifier le MDD, les contrats d'opérations, les RDCU, les tests et le code. Cependant, cette fois-ci vous devez vous débrouiller, en vous référant à des étapes plus haut.
 > ⚠️Les tests de base du squelette lancés par `npx jest --colors --coverage "[^lab0].test.ts"` ne seront plus bons, car ils valident les fonctionnalités du jeu avec **deux** dés.
 > Il faut les modifier pour la nouvelle fonctionnalité avec trois dés.
 > Certains de ces tests sont plus difficiles à faire passer, notamment ceux dans `test/core/jeuDeDes.test.ts` qui valident les valeurs retournées par la méthode `brasser()`.
