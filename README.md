@@ -439,10 +439,6 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/squelette.
 
 - [ ] vérifier que les tests pour redémarrerJeu passent: `npx jest --colors jeuRouter-redemarrerJeu-lab0.test.ts`. (Node.js)
 
-- [ ] vérifier que TOUS les tests de fonctionnalités passent (Node.js)
-
-  `npx jest --colors --coverage "[^lab0].test.ts"` devrait indiquer que tous les tests passent.
-
 - [ ] ajouter le bouton dans `views/index.pug` (PugJS.org)
 
   > Facultatif : pour une explication de PUG (anciennement Jade) avec Express, il y a [cette vidéo](https://www.youtube.com/watch?v=DSp9ExFw3Ig).
