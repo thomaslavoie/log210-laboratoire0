@@ -77,6 +77,8 @@ Vous pouvez cocher chaque étape dans la liste suivante:
 - [ ] [installer VSCode](https://code.visualstudio.com/Download) sur votre machine
 
 - [ ] [installer l'extension PlantUML dans VSCode](https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml)
+      
+- [ ] [installer l'extension Markdown PDF dans VSCode](https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf)
 
 - [ ] configurer l'extension PlantUML pour utiliser plantuml.com comme serveur en ajoutant/modifiant les "User settings" en VSCode:
 
@@ -535,7 +537,7 @@ Il existe un lien dans la barre de navigation «Classement» pour la page `/stat
 ### 8. Remise du rapport en format PDF
 
 - [ ] Assurez-vous de générer une version PDF de votre fichier `docs/squelette.md` nommé `docs/lab0.pdf`
-  > un menu contextuel devrait vous permettre de réaliser cette tâche dans Visual Studio Code si vous avez installé les bonnes extensions. Il se peut que vous ayez à installer d'autres modules (un _exporter_ pour Chromium). Il se peut que le fichier soit créé dans un répertoire `out/docs/` aussi avec le nom `Squelette.pdf`.
+  > un menu contextuel dans le code du fichier (et non pas sur le nom du fichier) devrait vous permettre de réaliser cette tâche dans Visual Studio Code si vous avez installé les bonnes extensions. Il se peut que vous ayez à installer d'autres modules (un _exporter_ pour Chromium). Il se peut que le fichier soit créé dans un répertoire `out/docs/` aussi avec le nom `Squelette.pdf`.
 
 ### 9. Faire face aux parasites et aux mollassons dans une équipe
 
