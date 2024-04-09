@@ -530,7 +530,7 @@ Il existe un lien dans la barre de navigation «Classement» pour la page `/stat
 > Il faut donc faire plus d'essais (jusqu'à 2000?) pour obtenir toutes les valeurs dans le test.
 > Faire autant d'essaies dans un test n'est pas idéal puisque ça prend du temps.
 > Il serait plus efficient si on utilisait des [mocks](https://fr.wikipedia.org/wiki/Mock_(programmation_orient%C3%A9e_objet)), mais cela est hors du cadre du cours.
-- [ ] À ce stade-ci, seulement 3 tests devraient échoués. C'est normal. Les étapes suivantes vont se concentrer à compléter le travail afin que l'ensemble des tests soient valides.
+- [ ] À ce stade-ci, seulement 3 tests devraient échouer. C'est normal. Les étapes suivantes vont se concentrer à effectuer le travail afin que l'ensemble des tests soient valides.
 
 ### 8. Remise du rapport en format PDF
 
