@@ -1,17 +1,20 @@
 <!-- 
-  Note pour l'enseignant:  pour faire une mise à jour suite à la mise à jour du squelette.  
-  npm run install-squelette
+  Le lab0 dépend du squelette. Il faut actualiser le squelette en premier (le cas échéant) et en faire un merge.
+  Voir https://stackoverflow.com/a/56577320/1168342 pour les détails. Ça marche bien.
   -->
 
-# LOG210 - Lab 0 - Tutoriel sur les technologies
+# LOG210 - Lab 0: tutoriel sur les technologies
 
 Cet exercice, sous forme de tutoriel, a l'objectif de vous apprendre les technologies utilisées pour le laboratoire de LOG210.
-On vous propose d'ajouter une fonctionnalité au **Jeu de Dés**, un squelette de code que votre vrai projet de LOG210 doit suivre.
+On vous propose d'ajouter une fonctionnalité au **Jeu de dés**, un squelette de code que votre vrai projet de LOG210 doit suivre.
 Le squelette est une application minimaliste permettant d'intégrer correctement plusieurs technologies (interface utilisateur, serveur web avec couches logicielles, etc.).
 En apprenant avec le squelette, vous pouvez aller plus vite, sans nécessairement tout comprendre au début.
 Vous pouvez vous concentrer sur la méthodologie d'analyse et de conception qui est le sujet principal de LOG210.
 
-> Ce travail est individuel, soumis dans un dépôt privé, pour que chaque personne puisse comprendre et contribuer efficacement dans son équipe. ⚠️Les points pour ce laboratoire sont dans le volet de travail de nature individuelle. **L'évaluation de ce travail déterminera en partie si vous passez le seuil pour la note minimale pour l'ensemble des éléments évalués individuellement.** Alors chaque point est très important!
+> Ce travail est individuel, soumis dans un dépôt privé, pour que chaque personne puisse comprendre et contribuer efficacement dans son équipe.
+> ⚠️Les points pour ce laboratoire sont dans le volet de travail de nature individuelle.
+> **L'évaluation de ce travail déterminera en partie si vous passez le seuil pour la note minimale pour l'ensemble des éléments évalués individuellement**.
+> Alors chaque point est très important!
 
 ## Préalables
 
@@ -23,7 +26,7 @@ Dans les cours préalables à LOG210, vous devriez avoir déjà vu:
 
 ### Date de remise
 
-La date de remise du rapport et du code est **avant la séance 03 de laboratoire.**
+La date de remise du rapport et du code est **avant la séance 03 de laboratoire**.
 Notez que le calendrier des séances est différent pour chaque groupe-cours.
 Vérifiez avec votre auxiliaire d'enseignement (chargé.e de laboratoire).
 
@@ -52,7 +55,7 @@ Quant à la méthodologie de travail, ce tutoriel vous permettra aussi de savoir
 
 ## Objectif de l'exercice
 
-Cet exercice vous amènera à travers des étapes à ajouter une nouvelle fonctionnalité au **Jeu de Dés**.
+Cet exercice vous amènera à travers des étapes à ajouter une nouvelle fonctionnalité au **Jeu de dés**.
 Vous devez réaliser le cas d'utilisation *Redémarrer* qui va simplement redémarrer le jeu.
 Pour respecter le processus de génie logiciel enseigné dans LOG210, il faudra passer par les étapes suivantes:
 
@@ -70,7 +73,7 @@ Vous pouvez cocher chaque étape dans la liste suivante:
 
 ### 0. préparer votre machine pour ce tutoriel;
 
-- [ ] jeter un œil sur la [documentation du squelette](docs/squelette.md)
+- [ ] jeter un œil sur la [documentation du squelette](docs/Squelette.md)
 
 - [ ] [installer node.js](https://nodejs.org/en/download/) sur votre machine
 
@@ -92,10 +95,11 @@ Vous pouvez cocher chaque étape dans la liste suivante:
 - [ ] [cloner](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) le dépôt de code de ce laboratoire sur votre machine
 
   - :warning: Ne pas cloner le code dans un chemin qui contient des espaces ou des accents.
+  - Facultatif : Lire cette [Présentation de GitHub dans Visual Studio Code](https://learn.microsoft.com/fr-ca/training/modules/introduction-to-github-visual-studio-code/) de Microsoft. 
 
 - [ ] faire un build du code
 
-  - Ouvrir le dossier du projet en VSCode **File > Open Foler...**
+  - Ouvrir le dossier du projet en VSCode **File > Open Folder...**
 
   - Dans VSCode, ouvrir un terminal dans le menu **Terminal > New Terminal**
 
@@ -120,31 +124,29 @@ Vous pouvez cocher chaque étape dans la liste suivante:
 
 - [ ] exécuter les tests
 
-  - Dans le terminal, taper `npm run test` pour exécuter les tests du lab 0.
+  - Dans le terminal, taper `npx jest --colors lab0.test.ts` pour exécuter les tests du lab 0.
 
     Normalement, on devrait voir les messages comme:
 
     ```text
     ...
-    Test Suites: 15 failed, 1 passed, 16 total
-    Tests:       41 failed, 5 passed, 46 total
+    Test Suites: 16 failed, 16 total
+    Tests:       45 failed, 1 passed, 46 total
     Snapshots:   0 total
     Time:        9.908 s
     Ran all test suites matching /lab0.test.ts/i.
     ```
 
-    Certains tests valident le contenu de vos fichiers (la documentation) et d'autres valident les fonctionnalités (la programmation).
-    Puisque vous commencez le lab 0, c'est normal d'avoir beaucoup de tests "failed".
+    Certains tests valident le contenu des fichiers rajoutés pour ce laboratoire (la documentation, la nouvelle fonctionnalité) et d'autres valident les fonctionnalités de base du squelette (dont certains vous aurez à modifier).
+    Puisque vous venez de commencer le lab 0, c'est normal d'avoir beaucoup de tests "failed".
     Le but est de faire passer tous les tests au fur et à mesure que vous apprenez des aspects technologiques du laboratoire.
-
-    Veuillez noter que pour les tests qui valident les fonctionnalités, vous devez avoir une couverture de test de 100% pour obtenir tous vos points.
 
     La rétroaction de ce laboratoire ne viendra pas d'un auxiliaire d'enseignement, car c'est un travail individuel.
     Ce sont des tests automatiques qui vont diagnostiquer les problèmes pour vous.
     **Si vous avez une difficulté que vous n'arrivez pas à résoudre, vous devez poser des questions aux auxiliaires d'enseignement.**
 
   - Pour voir la liste des tests pour le lab0, taper `npx jest --listTests lab0.test.ts`
-  - Pour exécuter un test individuel, p. ex. `identification-lab0.test.ts` -- très utile pour ne pas avoir trop d'informations avec tous les tests -- taper `npx jest --colors identification-lab0.test.ts` (il n'est pas nécessaire de spécifier tout le chemin du fichier):
+  - Pour exécuter un test individuel, p. ex. `identification-lab0.test.ts` -- très utile pour ne pas avoir trop d'informations avec tous les tests -- taper `npx jest --colors identification-lab0.test.ts` (il n'est pas nécessaire de spécifier tout le chemin du fichier de test):
 
     ```
     $ npx jest --colors identification-lab0.test.ts
@@ -229,9 +231,8 @@ Vous pouvez cocher chaque étape dans la liste suivante:
 
 - [ ] exécuter le serveur sur localhost
 
-  - Dans le terminal, `npm run build && npm start`
+  - Dans le terminal, `npm start`
 
-<!-- markdown-link-check-disable-next-line -->
 - [ ] exécuter l'application avec un navigateur moderne à l'URL [http://localhost:3000](http://localhost:3000)
   - [ ] démarrer une partie avec un joueur
   - [ ] essayer le bouton pour jouer
@@ -254,7 +255,7 @@ Vous pouvez cocher chaque étape dans la liste suivante:
     });
   ```
 
-  - La [barre de navigation `views/includes/navbar.pug` vient de Bootstrap](https://getbootstrap.com/docs/4.1/components/navbar/). Elle est personnalisée selon les valeurs dans l'objet (`user`) passé grâce à la fonctionnalité de [mixins de Pug](https://pugjs.org/language/mixins.html). Cet objet est initialisé plus haut dans `src/app.ts`:
+  - La [barre de navigation `views/includes/navbar.pug` provient de Bootstrap](https://getbootstrap.com/docs/4.1/components/navbar/). Elle est personnalisée selon les valeurs dans l'objet (`user`) passé grâce à la fonctionnalité de [mixins de Pug](https://pugjs.org/language/mixins.html). Cet objet est initialisé plus haut dans `src/app.ts`:
 
     ```typescript
     // Extrait de src/app.ts
@@ -263,23 +264,22 @@ Vous pouvez cocher chaque étape dans la liste suivante:
 
     Cet objet sera un mécanisme de gérer les vues. Par exemple, si `objet.isAnonymous` est vrai, `navbar.pug` n'affiche pas de lien, car l'utilisateur n'est pas connu et donc doit se connecter pour avoir plus d'accès.
     > Dans cet exercice, vous n'avez pas à gérer les connexions, mais sachez que le squelette supporte cette dimension. Ça sera utile pour votre projet en équipe.
-  - la technologie Bootstrap est chargée dans un en-tête (`views/includes/head.pug`) qui, lui, est inclus dans chaque page statique. Sachez que les versions de Bootstrap ont évoluées assez rapidement et il faut faire attention à la version si vous trouvez un exemple intéressant que vous voulez réutilisez. La documentation de Bootstrap est excellente, donc vérifiez toujours avec ça.
+  - la technologie Bootstrap est chargée dans un en-tête (`views/includes/head.pug`) qui, lui, est inclus dans chaque page statique. Sachez que les versions de Bootstrap ont évolué assez rapidement et il faut faire attention à la version si vous trouvez un exemple intéressant que vous voulez réutiliser. La documentation de Bootstrap est excellente, donc vérifiez toujours avec ça.
   - les pages statiques définies avec Pug permettent de créer facilement une interface humain-machine, mais il doit y avoir des routes définies dans `src/app.ts` pour que les fichiers `.pug` soient bien rendus au navigateur.
   - repérer dans le fichier `src/app.ts` la définition des *route handlers* pour les pages statiques, p. ex. `/` vers `views/index.pug` et `/stats` vers `views/stats.pug`. Cela est important pour étendre le squelette dans le cadre du projet en équipe. Il y a aussi des pages statiques pour aider avec la gestion des connexions (`views/signin.pug` et `views/signout.pug`) qui sont intégrées également dans le squelette (routes et barre de navigation).
-  - noter que la syntaxe des fichiers Pug est sensible à l'indentation (comme en Python). Si vous trouvez un exemple de code Pug à intégrer dans votre projet, l'éditeur VSCode va (par défaut) utiliser une indentation de 4 espaces, tandis que beaucoup d'exemples sur internet utilisent 2 espaces.
+  - noter que la syntaxe des fichiers Pug est sensible à l'indentation (comme en Python). Si vous trouvez un exemple de code Pug à intégrer dans votre projet, l'éditeur VSCode va (par défaut) utiliser une indentation de 4 espaces, tandis que beaucoup d'exemples sur Internet utilisent 2 espaces.
 <!-- Note -- on évite de mettre les exemples concrets de code du squelette dans le tutoriel, car ça évolue et c'est difficile à synchroniser. Malheureusement le tutoriel est moins explicite à cause de ça. -->
 
-### 1. actualiser la documentation de la fonctionnalité;
+### 1. Actualiser la documentation de la fonctionnalité
 
-> Note: il est fortement recommandé de faire un commit (et push) du code (au moins) à la fin de chaque étape à partir de maintenant. Les auxiliaires d'enseignement auront accès à votre dépôt de code source et pourraient vous aider (surtout à distance) si votre code est synchronisé souvent avec le dépôt.
+> Note: il est fortement recommandé de faire un commit (et push) du code (au moins) à la fin de chaque étape à partir de maintenant. Les auxiliaires d'enseignement auront accès à votre dépôt de code source et pourraient vous aider (surtout à distance) si votre code est synchronisé souvent avec le dépôt. Rappel: [Présentation de GitHub dans Visual Studio Code](https://learn.microsoft.com/fr-ca/training/modules/introduction-to-github-visual-studio-code/).
 
-La documentation des fonctionnalités se trouve dans le fichier [docs/squelette.md](docs/squelette.md). Dans cette étape, vous devez:
+La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.md](docs/Squelette.md). Dans cette étape, vous devez:
 
-- [ ] dans le fichier `docs/squelette.md` qui sert de documentation, ajouter les informations pour vous identifier dans la section **Identification de l'étudiant**.  
-  <s>Vérifier le travail avec le test, `npx jest --colors dcu-puml-lab0.test.ts`</s>
-  Vérifier le travail avec le test, `npx jest --colors lab0/squelette/identification-lab0.test.ts`
+- [ ] dans le fichier `docs/Squelette.md` qui sert de documentation, ajouter les informations pour vous identifier dans la section **Identification de l'étudiant**.  
+  Vérifier le travail avec le test, `npx jest --colors identification-lab0.test.ts`
 
-- [ ] dans le fichier `docs/squelette.md`, ajouter le cas d'utilisation *Redémarrer* (texte) juste après [le texte du cas d'utilisation *Jouer aux dés*](docs/squelette.md#jouer-aux-dés):
+- [ ] dans le fichier `docs/Squelette.md`, ajouter le cas d'utilisation *Redémarrer* (texte) juste après [le texte du cas d'utilisation *Jouer aux dés*](docs/Squelette.md#jouer-aux-dés):
 
   ```markdown
   #### Redémarrer
@@ -313,8 +313,8 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/squelette.
   <details>
      <summary>Facultatif : faire en sorte que la documentation soit correctement liée aux fichiers `.puml`</summary><p>
 
-  *Question*: Comment faire en sorte que `docs/squelette.md` affiche la version modifiée du fichier `docs/modeles/dcu.puml` après un *push* des fichiers vers GitHub?
-  *Réponse*: Il faut modifier le markdown suivant dans `docs/squelette.md`:
+  *Question*: Comment faire en sorte que `docs/Squelette.md` affiche la version modifiée du fichier `docs/modeles/dcu.puml` après un *push* des fichiers vers GitHub?
+  *Réponse*: Il faut modifier le markdown suivant dans `docs/Squelette.md`:
 
   ```markdown
   ### Diagramme de cas d'utilisation
@@ -331,7 +331,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/squelette.
      <summary>Facultatif : faire en sorte que la documentation soit correctement liée aux fichiers `.svg`</summary><p>
 
   *Question*: Comment faire en sorte que `Squelette.md` affiche la version modifiée du fichier `docs/modeles/dcu.puml` après un *push* des fichiers vers GitHub?
-  *Réponse*: Il faut exporter les diagrammes puml à l'aide du menu contextuel  "Export current file diagrams" et modifier le markdown suivant dans `docs/squelette.md`:
+  *Réponse*: Il faut exporter les diagrammes puml à l'aide du menu contextuel  "Export current file diagrams" et modifier le markdown suivant dans `docs/Squelette.md`:
 
   ```markdown
   ### Diagramme de cas d'utilisation
@@ -348,8 +348,8 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/squelette.
   ```
   PASS  test/modeles/dcu-puml-lab0.test.ts
     docs/modeles/dcu.puml
-      √ should contain (Redémarrer) as R #powderblue (1 ms)
-      √ should contain J -- R (1 ms)
+      √ devrait contenir (Redémarrer) as R #powderblue (1 ms)
+      √ devrait contenir J -- R (1 ms)
 
   Test Suites: 1 passed, 1 total
   Tests:       2 passed, 2 total
@@ -360,7 +360,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/squelette.
 
   Repérer et valider le(s) test(s) individuellement à la fin de chaque étape.
 
-### 2. actualiser des modèles de conception (diagrammes de séquence système et réalisations de cas d'utilisation)
+### 2. Actualiser des modèles de conception (diagrammes de séquence système et réalisations de cas d'utilisation)
 
 > Les modèles de conception guident l'implémentation. Vous aurez à revenir à cette section durant ce tutoriel.
 
@@ -369,7 +369,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/squelette.
   Faire un diagramme en PlantUML qui ressemble à ceci:  
   ![DSS pour le scénario Redémarrer](https://www.plantuml.com/plantuml/svg/0/NOynQWD134NxEOLmvHGXlJ6B0waCQRAGNin-6v4TpKRI52RuFl4vzcAPf4c8Yjyy_d_euC4MhSp9tqGNDYxaSPdHqoJ_8nDEtEOuLGtb0dg5JQpyjult1isWZqJzdk7EPppESbRAq82bQmg9BdWQHrfgC_gMvVMcR59fByCBflLMs0osVv0XSOvgjDaTQqEp3R5JJbqNacLXZOx6YyVwMV03FUNxmMb7zZjqHDlU9Jf0f_xI5m00 "DSS pour le scénario Redémarrer")
 
-- [ ] prendre connaissance des postconditions du contrat d'opération
+- [ ] prendre connaissance de la postcondition du contrat d'opération :
 
   > Toutes les instances de Joueur en cours ont été supprimées.
 
@@ -378,15 +378,15 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/squelette.
   Faire un diagramme en PlantUML qui ressemble à ceci:  
   ![RDCU pour redémarrerJeu](https://www.plantuml.com/plantuml/svg/0/RP31IWD138RlynIX5rkmBx38KkXwANXHzBINE9lMMMSoGoO3-aYz-mRxOiOAWk8bWVny-VzaLnL5MugklWOkA9YWwdiagnBy7sMY8xQenypAc0YUI2PaT1hKYFjX_mWbDm6XQJad524vK7C6Q_2X82kiEfiCD51T0LRmRjjxwBu8-W7M6yTP2IISNjJ4IZ4pxCrLbez8JKPUVszPpXMewiZnAZ_Ff23e0zFcj-MScq6r6_aEoys37SQdwyDbs5zIpCbvsFRMpSr7Gla_mkrR8L6t8vxiCPy0 "RDCU pour redémarrerJeu")
 
-  Valider avec les test `test/modeles/rdcu-redemarrerJeu-puml-lab0.test.ts` et `test/modeles/dss-redemarrer-puml-lab0.test.ts`.
+  Valider avec les tests `test/modeles/rdcu-redemarrerJeu-puml-lab0.test.ts` et `test/modeles/dss-redemarrer-puml-lab0.test.ts`.
 
 > À partir de maintenant, consultez le code existant pour vous aider à compléter les étapes
 
-### 3. écrire des tests pour la fonctionnalité
+### 3. Écrire des tests pour la fonctionnalité
 
 - [ ] ajouter de nouveaux cas de test pour Redémarrer (Jest/SuperTest)
 
-  - ouvrir le fichier `test/lab0/routes/jeuRouter-redemarrerJeu-lab0.test.ts`
+  - ouvrir le fichier `test/routes/jeuRouter-redemarrerJeu-lab0.test.ts`
 
   - y créer une suite de tests nommée `'GET /api/v1/jeu/redemarrerJeu'` avec `describe`
   
@@ -407,9 +407,9 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/squelette.
 - [ ] vérifier que les tests ne passent pas (Jest/SuperTest)
   `npx jest --colors jeuRouter-redemarrerJeu-lab0.test.ts` va indiquer `n failed`
 
-  Cela est normal, car nous avons écrit plusieurs tests avant d'avoir écrit les fonctionnalités, selon la pratique *Développement piloté par les tests*.
+  Cela est normal, car nous avons écrit plusieurs tests avant d'avoir écrit les fonctionnalités, selon la pratique de *Développement piloté par les tests*.
 
-### 4. écrire la fonctionnalité
+### 4. Écrire la fonctionnalité
 
 - [ ] ajouter l'opération système `redemarrerJeu` dans le contrôleur GRASP `src/core/jeuDeDes.ts` (TypeScript)
 
@@ -437,17 +437,17 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/squelette.
 
   `npm run build` devrait passer sans erreurs. Si vous avez des erreurs, essayer de lire et de comprendre pourquoi. Si vous êtes bloqués pendant plus de 5 minutes, demandez de l'aide à un auxiliaire d'enseignement.
 
-- [ ] vérifier que les tests pour redémarrerJeu passent: `npx jest --colors jeuRouter-redemarrerJeu-lab0.test.ts`. (Node.js)
+- [ ] vérifier que les tests pour la nouvelle fonctionnalité redémarrerJeu passent: `npx jest --colors jeuRouter-redemarrerJeu-lab0.test.ts`. (Node.js)
 
-- [ ] vérifier que TOUS les tests de fonctionnalités passent (Node.js)
+- [ ] vérifier que TOUS les tests des fonctionnalités de base passent (Node.js)
 
-  `npx jest --colors --coverage "[^lab0].test.ts"` devrait indiquer que tous les tests passent.
+  `npx jest --colors --coverage --testPathIgnorePatterns=lab0.test.ts` devrait indiquer que tous les tests passent.
 
 - [ ] ajouter le bouton dans `views/index.pug` (PugJS.org)
 
   > Facultatif : pour une explication de PUG (anciennement Jade) avec Express, il y a [cette vidéo](https://www.youtube.com/watch?v=DSp9ExFw3Ig).
 
-  Dans `views/index.pug` après le texte ici, ajouter la ligne `button#redemarrer Redémarrer` (:warning: *attention au niveau d'indentation*):
+  Dans `views/index.pug` après le texte ici, ajouter la ligne `button#redemarrer Redémarrer` (:warning: *attention à l'indentation*):
 
   ```PUG
       ul.entries
@@ -484,7 +484,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/squelette.
 
   Refaire le build et relancer le serveur dans le terminal. Recharger la page web et vérifier que le bouton fonctionne comme il le faut en créant une nouvelle partie pour un joueur et ensuite cliquant sur *Redémarrer*.
 
-### 5. Fonctionnalité: Afficher classement sur nouvelle page
+### 5. Afficher le classement sur nouvelle page
 
 Il existe un lien dans la barre de navigation «Classement» pour la page `/stats`. Cependant, cette page n'affiche pas la colonne Ratio, car l'information n'est pas encore calculée.
 
@@ -514,7 +514,7 @@ Il existe un lien dans la barre de navigation «Classement» pour la page `/stat
 
 - [ ] Trier le tableau de `joueursAvecRatio` pour que le classement s'affiche en ordre décroissant par ratio. [Astuce sur stackoverflow](https://stackoverflow.com/a/21689268/1168342).
 
-  > Puisqu'il s'agit simplement d'une nouvelle vue sur les informations déjà présentes dans le système, on ne doit pas faire une RDCU. C'est-à-dire qu'on ne modifie pas l'état des objets du domaine.
+  > Puisqu'il s'agit simplement d'une nouvelle vue sur les informations déjà présentes dans le système, on ne doit pas faire une RDCU. C'est-à-dire qu'on ne modifie pas *la logique d'affaires* ou l'état des objets du domaine.
 
 ### 6. Documenter les classes logicielles
 
@@ -525,37 +525,39 @@ Il existe un lien dans la barre de navigation «Classement» pour la page `/stat
 ### 7. Pratiquer ce qui a été appris
 
 - [ ] Modifier le cas d'utilisation *Jouer aux dés* pour que le joueur lance **trois** dés plutôt que deux et la condition pour gagner soit que le *total soit inférieur ou égal à 10*. Il faut passer par toutes les étapes, y compris modifier le MDD, les contrats, les RDCU, les tests et le code. Cependant, cette fois-ci vous devez vous débrouiller, en vous référant à des étapes plus haut.
-> ⚠️Les tests de base du squelette lancés par `npx jest --colors --coverage "[^lab0].test.ts"` ne seront plus bons, car ils valident les fonctionnalités du jeu avec **deux** dés.
-> Il faut les modifier pour la nouvelle fonctionnalité avec trois dés.
-> Certains de ces tests sont plus difficiles à faire passer, notamment ceux dans `test/core/jeuDeDes.test.ts` qui valident les valeurs retournées par la méthode `brasser()`.
-> En fait, la [probabilité d'avoir certaines valeurs (ex. 3 et 18) avec trois dés](https://fr.wikipedia.org/wiki/Probabilit%C3%A9s_des_d%C3%A9s) est faible (ex. 1/216 ≈ 0.5 %).
-> Il faut donc faire plus d'essais (jusqu'à 2000?) pour obtenir toutes les valeurs dans le test.
-> Faire autant d'essaies dans un test n'est pas idéal puisque ça prend du temps.
-> Il serait plus efficient si on utilisait des [mocks](https://fr.wikipedia.org/wiki/Mock_(programmation_orient%C3%A9e_objet)), mais cela est hors du cadre du cours.
+  > ⚠️Certains tests de base du squelette lancés par `npx jest --colors --coverage --testPathIgnorePatterns=lab0.test.ts` ne seront plus bons, car ils valident les fonctionnalités du jeu avec **deux** dés.
+  > Il faut les modifier pour la nouvelle fonctionnalité avec **trois** dés.
+  > Certains de ces tests sont plus difficiles à faire passer, notamment ceux dans `test/core/jeuDeDes.test.ts` qui valident les valeurs retournées par la méthode `brasser()`.
+  > En fait, la [probabilité d'avoir certaines valeurs (ex. 3 et 18) avec trois dés](https://fr.wikipedia.org/wiki/Probabilit%C3%A9s_des_d%C3%A9s) est faible (ex. 1/216 ≈ 0.5 %).
+  > Il faut donc faire plus d'essais (jusqu'à 2000?) pour obtenir toutes les valeurs dans le test.
+  > Faire autant d'essais dans un test n'est pas idéal puisque ça prend du temps.
+  > Il serait plus efficient si on utilisait des éléments de remplacement (un dé *temporaire* qui retourne toujours une même valeur), mais cette façon de faire (parfois appelée des [mocks](https://fr.wikipedia.org/wiki/Mock_(programmation_orient%C3%A9e_objet))) est hors du cadre du cours.
 
-### 8. Remise du rapport en format PDF
+### 8. Générer le rapport en format PDF
 
-- [ ] Assurez-vous de générer une version PDF de votre fichier `docs/squelette.md` nommé `docs/lab0.pdf`
-  > un menu contextuel devrait vous permettre de réaliser cette tâche dans Visual Studio Code si vous avez installé les bonnes extensions. Il se peut que vous ayez à installer d'autres modules (un _exporter_ pour Chromium). Il se peut que le fichier soit créé dans un répertoire `out/docs/` aussi avec le nom `Squelette.pdf`.
+- [ ] Assurez-vous de générer une version PDF de votre fichier `docs/Squelette.md` nommé `docs/lab0.pdf`
+  > Un menu contextuel devrait vous permettre de réaliser cette tâche dans Visual Studio Code si vous avez installé les bonnes extensions.
+  > Il se peut que vous ayez à installer d'autres modules (un _exporter_ pour Chromium). 
+  > Il se peut que le fichier soit créé dans un répertoire `out/docs/` aussi avec le nom `Squelette.pdf`.
 
-### 9. Faire face aux parasites et aux mollassons dans une équipe
+### 9. Apprendre à faire face aux parasites et aux mollassons dans une équipe
 
-Il peut arrive qu'une équipe soit composée des personnes qui travaillent beaucoup moins que les autres.
+Il peut arriver qu'une équipe soit composée des personnes qui travaillent beaucoup moins que les autres.
 Pour vous sensibiliser aux problèmes typiques et vous outiller à agir rapidement en cas de difficultés, il y a un texte à lire et à intérioriser.
 
-1. Lisez le texte [Faire face aux parasites et aux mollassons dans une équipe](https://docs.google.com/document/d/e/2PACX-1vRWTtdcGjUg34gqB6CW_EMt0H28Cgunq09_7HxMUoTLGERjUcQXBHlrYyB76PYJGjtaoYJhhsHS1Tjj/pub)
-2. Écrivez une réponse dans le fichier `docs/experience-parasites-mollassons.md` du dépôt.
+- [ ] Lire le texte [Faire face aux parasites et aux mollassons dans une équipe](https://docs.google.com/document/d/e/2PACX-1vRWTtdcGjUg34gqB6CW_EMt0H28Cgunq09_7HxMUoTLGERjUcQXBHlrYyB76PYJGjtaoYJhhsHS1Tjj/pub)
+- [ ] Écrire une réponse dans le fichier `docs/experience-parasites-mollassons.md` du dépôt suivant les directives dans ce fichier.
 
 ### 10. Vérifier la correction automatique
 
 Cet exercice sera noté quasi automatiquement lorsque vous transférez votre code dans GitHub Classrooms.
 Les tests associés à ce projet permettent de vérifier que la majorité des modifications que vous deviez réaliser ont été faites.
-Il y a deux volets de la correction automatique avec les tests automatiques:
+Il y a deux volets de la correction automatique avec les tests:
 
-- Documentation: `npx jest --colors lab0.test.ts` (exécuter tous les tests ayant `lab0.test.ts` dans le nom)
-- Fonctionnalités: `npx jest --colors --coverage "[^lab0].test.ts"` (exécuter tous les tests **n'ayant pas** `lab0.test.ts` dans le nom et mesurer la couverture)
+- Documentation et fonctionnalités rajoutées: `npx jest --colors lab0.test.ts` (exécuter tous les tests ayant `lab0.test.ts` dans le nom)
+- Fonctionnalités de base du squelette: `npx jest --colors --coverage --testPathIgnorePatterns=lab0.test.ts` (exécuter tous les tests **n'ayant pas** `lab0.test.ts` dans le nom et mesurer la couverture)
 
-Assurez-vous qu'aucun test n'est en échec et que la couverture de test est de 100% pour la partie fonctionnalité.
+Assurez-vous qu'aucun test n'est en échec et que la couverture de test (`branches`) est de 100% pour la commande `npx jest --colors --coverage`.
 
 **Important:**
 La seule rétroaction pour ce laboratoire est à travers les commandes ci-dessus.
@@ -564,28 +566,26 @@ Vous n'aurez pas de rétroaction individuelle après la date de remise, alors si
 ### 11. Remettre (anglais *commit*) tous les changements
 
 - [ ] À l'aide de Zoom ou de tout autre outil d'enregistrement vidéo, enregistrez une démonstration du fonctionnement de l'interface utilisateur avec au moins 2 joueurs.  Sauvegarder le résultat dans le fichier **demo.mp4** et placer ce fichier dans le même répertoire que README.md.
-- [ ] faire une remise de la solution du projet (GitHub) incluant votre réponse dans `docs/experience-parasites-mollassons.md`
+- [ ] Faire une remise de la solution du projet (GitHub) incluant votre réponse dans `docs/experience-parasites-mollassons.md`
 
 **Félicitations!** Vous avez réussi les défis technologiques nécessaires pour être performant dans les laboratoires de LOG210! Ce tutoriel vous sera sûrement utile pendant le développement du projet itératif à suivre, car il y a des [liens pour la documentation des technologies différentes](#technologies-vues-dans-cet-exercice).
 
-  > Si vous avez terminé rapidement grâce à votre expérience, pensez à aider vos coéquipiers qui pourraient toujours avoir des questions. Mais ne faites pas le travail à leur place, car le but est que toute l'équipe soit performante sur le plan technologique. Cherchez à augmenter le facteur de bus (voir les notes de cours pour l'explication) de l'équipe! En plus, le mentorat est une caractéristique importante du leadership. 
+  > Si vous avez terminé rapidement grâce à votre expérience, pensez à aider vos coéquipiers qui pourraient toujours avoir des questions. Mais ne faites pas le travail à leur place, car le but est que toute l'équipe soit performante sur le plan technologique. Cherchez à augmenter le facteur de bus (voir les notes de cours pour l'explication) de l'équipe! En plus, le mentorat est une caractéristique importante du leadership.
 
 ## Calcul de la note
 
-Le calcul de la note du laboratoire se fait à partir des résultats des tests automatiques et une évaluation faite par l'auxiliaire d'enseignement:
+Le calcul de la note du laboratoire se fait à partir des résultats des tests automatiques roulés avec la commande `npx jest --coverage` (au début du projet et à la fin du projet) et une évaluation faite par l'auxiliaire d'enseignement:
 
 | variable | explication |
 |:-:|:-|
-| *e* | 10 points si vous avez complété un texte d'au moins 300 mots dans `docs/experience-parasites-mollassons.md` (sinon 0 point)|
-|*b*<sup>*</sup>| nombre de nouveaux boutons fonctionnels (max 1)|
-| *c*<sup>*</sup>| 10 points si la page de classement fonctionne correctement (sinon 0 point) |
-| *C*<sup>*</sup>| 10 points multipliés par la couverture de test de toutes les branches |
-| *v* | nombre de tests valides ("passed")|
-| *d* | nombre de tests déjà valides au début du projet|
-| *t* | nombre total de tests |
-<!-- Pour ce qui est de la couverture de tests,  -->
-   
-<sup>*</sup>évaluation faite par l'auxiliaire d'enseignement
+| $e$ | 10 points si vous avez complété un texte d'au moins 300 mots dans `docs/experience-parasites-mollassons.md` (sinon 0 point)|
+| $b$ | nombre de nouveaux boutons fonctionnels (max 1)^*^|
+| $c$ | 10 points si la page de classement fonctionne correctement (sinon 0 point)^*^ |
+| $C$ | 10 points multipliés par la couverture de test de toutes les branches^*^ |
+| $v$ | nombre de tests valides ("passed")|
+| $d$ | nombre de tests déjà valides au début du projet|
+| $t$ | nombre total de tests |
 
-<!-- Source de l'image: \textup{Note finale}=\frac{e+6b+c+C+v-d}{10+6+10+10+t-d}100 -->
-<img src="https://latex.codecogs.com/png.image?\dpi{300}%20\bg_white\textup{Note%20finale}=\frac{e+6b+c+C+v-d}{10+6+10+10+t-d}100" width="400">
+^*^évaluation faite par l'auxiliaire d'enseignement
+
+$$\textup{Note}=\frac{e+6b+c+C+v-d}{10+6+10+10+t-d}100$$
