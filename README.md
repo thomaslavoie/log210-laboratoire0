@@ -386,7 +386,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
 
 - [ ] ajouter de nouveaux cas de test pour Redémarrer (Jest/SuperTest)
 
-  - ouvrir le fichier `test/routes/jeuRouter-redemarrerJeu-lab0.test.ts`
+  - ouvrir le fichier `test/labo0/routes/jeuRouter-redemarrerJeu-lab0.test.ts`
 
   - y créer une suite de tests nommée `'GET /api/v1/jeu/redemarrerJeu'` avec `describe`
   
