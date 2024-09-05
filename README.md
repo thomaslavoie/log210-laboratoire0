@@ -73,7 +73,7 @@ Vous pouvez cocher chaque étape dans la liste suivante:
 
 ### 0. préparer votre machine pour ce tutoriel;
 
-- [ ] jeter un œil sur la [documentation du squelette](docs/Squelette.md)
+- [ ] jeter un œil sur la [documentation du squelette](docs/squelette.md)
 
 - [ ] [installer node.js](https://nodejs.org/en/download/) sur votre machine
 
@@ -274,12 +274,12 @@ Vous pouvez cocher chaque étape dans la liste suivante:
 
 > Note: il est fortement recommandé de faire un commit (et push) du code (au moins) à la fin de chaque étape à partir de maintenant. Les auxiliaires d'enseignement auront accès à votre dépôt de code source et pourraient vous aider (surtout à distance) si votre code est synchronisé souvent avec le dépôt. Rappel: [Présentation de GitHub dans Visual Studio Code](https://learn.microsoft.com/fr-ca/training/modules/introduction-to-github-visual-studio-code/).
 
-La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.md](docs/Squelette.md). Dans cette étape, vous devez:
+La documentation des fonctionnalités se trouve dans le fichier [docs/squelette.md](docs/squelette.md). Dans cette étape, vous devez:
 
-- [ ] dans le fichier `docs/Squelette.md` qui sert de documentation, ajouter les informations pour vous identifier dans la section **Identification de l'étudiant**.  
+- [ ] dans le fichier `docs/squelette.md` qui sert de documentation, ajouter les informations pour vous identifier dans la section **Identification de l'étudiant**.  
   Vérifier le travail avec le test, `npx jest --colors identification-lab0.test.ts`
 
-- [ ] dans le fichier `docs/Squelette.md`, ajouter le cas d'utilisation *Redémarrer* (texte) juste après [le texte du cas d'utilisation *Jouer aux dés*](docs/Squelette.md#jouer-aux-dés):
+- [ ] dans le fichier `docs/squelette.md`, ajouter le cas d'utilisation *Redémarrer* (texte) juste après [le texte du cas d'utilisation *Jouer aux dés*](docs/squelette.md#jouer-aux-dés):
 
   ```markdown
   #### Redémarrer
@@ -313,8 +313,8 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
   <details>
      <summary>Facultatif : faire en sorte que la documentation soit correctement liée aux fichiers `.puml`</summary><p>
 
-  *Question*: Comment faire en sorte que `docs/Squelette.md` affiche la version modifiée du fichier `docs/modeles/dcu.puml` après un *push* des fichiers vers GitHub?
-  *Réponse*: Il faut modifier le markdown suivant dans `docs/Squelette.md`:
+  *Question*: Comment faire en sorte que `docs/squelette.md` affiche la version modifiée du fichier `docs/modeles/dcu.puml` après un *push* des fichiers vers GitHub?
+  *Réponse*: Il faut modifier le markdown suivant dans `docs/squelette.md`:
 
   ```markdown
   ### Diagramme de cas d'utilisation
@@ -331,7 +331,7 @@ La documentation des fonctionnalités se trouve dans le fichier [docs/Squelette.
      <summary>Facultatif : faire en sorte que la documentation soit correctement liée aux fichiers `.svg`</summary><p>
 
   *Question*: Comment faire en sorte que `Squelette.md` affiche la version modifiée du fichier `docs/modeles/dcu.puml` après un *push* des fichiers vers GitHub?
-  *Réponse*: Il faut exporter les diagrammes puml à l'aide du menu contextuel  "Export current file diagrams" et modifier le markdown suivant dans `docs/Squelette.md`:
+  *Réponse*: Il faut exporter les diagrammes puml à l'aide du menu contextuel  "Export current file diagrams" et modifier le markdown suivant dans `docs/squelette.md`:
 
   ```markdown
   ### Diagramme de cas d'utilisation
@@ -535,7 +535,7 @@ Il existe un lien dans la barre de navigation «Classement» pour la page `/stat
 
 ### 8. Générer le rapport en format PDF
 
-- [ ] Assurez-vous de générer une version PDF de votre fichier `docs/Squelette.md` nommé `docs/lab0.pdf`
+- [ ] Assurez-vous de générer une version PDF de votre fichier `docs/squelette.md` nommé `docs/lab0.pdf`
   > Un menu contextuel devrait vous permettre de réaliser cette tâche dans Visual Studio Code si vous avez installé les bonnes extensions.
   > Il se peut que vous ayez à installer d'autres modules (un _exporter_ pour Chromium). 
   > Il se peut que le fichier soit créé dans un répertoire `out/docs/` aussi avec le nom `Squelette.pdf`.
