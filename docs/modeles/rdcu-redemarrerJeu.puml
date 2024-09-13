@@ -1,0 +1,16 @@
+@startuml
+title RDCU pour redémarrerJeu
+
+actor "Utilisateur" as Utilisateur
+participant ":JeuDeDes" as JeuDeDes
+participant "joueurs: Map<String, Joueur>" as Joueurs
+
+Utilisateur -> JeuDeDes : redemarrerJeu()
+
+note right of JeuDeDes : selon Contrôleur\n(JeuDeDés est\nl'objet racine)
+
+JeuDeDes -> Joueurs : clear()
+
+note right of Joueurs : selon Expert
+
+@enduml

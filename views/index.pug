@@ -27,6 +27,9 @@ html
 
         h3 Joueurs
         //- .entries est défini dans /css/style.css
+        
+        
+
         ul.entries
           each joueur in joueurs
             li.joueur
@@ -38,6 +41,8 @@ html
               button.lancer(id=nom) Lancer dés
               = ' '
               button.terminer(id=nom) Terminer
-          else
-            li
-              em Pas de joueurs encore.
+      else
+        li
+          em Pas de joueurs encore.
+
+    button#redemarrer Redémarrer

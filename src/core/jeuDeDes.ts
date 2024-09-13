@@ -67,6 +67,14 @@ export class JeuDeDes {
         // ne pas retourner l'objet de la couche domaine
         return JSON.stringify(resultat);
     }
+    // Ajout de l'opération système redemarrerJeu
+    public redemarrerJeu(): string {
+        // Vide la map des joueurs (postcondition)
+        this._joueurs.clear();
+
+        // Retourner une réponse JSON pour indiquer que le jeu a été redémarré
+        return JSON.stringify({ message: "Le jeu a été redémarré avec succès." });
+    }
 
     // d'autres méthodes (des RDCU)
     brasser() {

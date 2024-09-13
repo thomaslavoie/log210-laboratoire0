@@ -1,0 +1,9 @@
+@startuml
+title DSS pour le scénario Redémarrer
+
+actor ":Joueur" as Joueur
+participant ":Système" as Systeme
+
+Joueur -> Systeme : redémarrerJeu()
+
+@enduml
