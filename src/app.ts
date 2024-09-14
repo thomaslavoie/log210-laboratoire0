@@ -61,13 +61,31 @@ class App {
 
     // Route pour classement (stats)
     router.get('/stats', (req, res, next) => {
+      // Récupérer la liste des joueurs depuis le contrôleur
+      const joueurs: Array<any> = JSON.parse(jeuRoutes.controleurJeu.joueurs);
+
+      // Ajouter le calcul du ratio à chaque joueur
+      const joueursAvecRatio = joueurs.map(joueur => {
+        // Assurez-vous que 'lancers' et 'lancersGagnes' sont des nombres valides
+        const ratio = joueur.lancers > 0 ? joueur.lancersGagnes / joueur.lancers : 0;
+        return {
+          ...joueur, // Conserver les autres propriétés du joueur
+          ratio: ratio // Ajouter la propriété ratio
+        };
+      });
+      
+
+      
+
+      // Trier les joueurs par ratio décroissant (optionnel)
+      joueursAvecRatio.sort((a, b) => b.ratio - a.ratio);
+
+      // Rendre la vue stats.pug avec les joueurs et leur ratio
       res.render('stats',
-        // passer objet au gabarit (template) Pug
         {
           title: `${titreBase}`,
           user: user,
-          // créer nouveau tableau de joueurs qui est trié par ratio
-          joueurs: JSON.parse(jeuRoutes.controleurJeu.joueurs)
+          joueurs: joueursAvecRatio // Passer les joueurs avec ratio au gabarit
         });
     });
 
@@ -90,12 +108,10 @@ class App {
       return res.redirect('/');
     });
 
-
     this.expressApp.use('/', router);  // routage de base
 
     this.expressApp.use('/api/v1/jeu', jeuRoutes.router);  // tous les URI pour le scénario jeu (DSS) commencent ainsi
   }
-
 }
 
 export default new App().expressApp;

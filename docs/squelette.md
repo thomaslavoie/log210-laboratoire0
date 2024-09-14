@@ -199,6 +199,9 @@ Voici la même figure, mais sous forme de diagramme de séquence avec l'acteur. 
 **RDCU**
 ![Diagramme de séquence, jouer](modeles/rdcu-jouer.svg)
 
+#### Diagramme de classes logicielles.
+**RDCU**
+(![Diagramme De classe pour solution App](image.png))
 #### Opération: `terminerJeu(nom:String)`
 
 **Postconditions**
