@@ -33,6 +33,7 @@ describe('GET /api/v1/jeu/redemarrerJeu', () => {
     });
   });
   
+  
 
   // Test pour valider la postcondition du contrat d'opération (plus de joueurs)
   it('devrait vérifier qu\'il n\'y a plus de joueurs après redemarrerJeu()', async () => {
@@ -44,6 +45,19 @@ describe('GET /api/v1/jeu/redemarrerJeu', () => {
   
     // Assurez-vous que joueursRes.body est bien un tableau et vérifiez sa taille
     expect(joueursRes.body).toEqual({}); // Attendre une liste vide
+  });
+
+   // Test pour valider que jouer retourne 404 après redemarrerJeu (aucun joueur existant)
+   it('devrait retourner 404 si on essaie de jouer sans joueur après redemarrerJeu', async () => {
+    // Appeler la route pour redémarrer le jeu
+    await request(app).get('/api/v1/jeu/redemarrerJeu');
+
+    // Tenter de jouer après redemarrerJeu, alors qu'il n'y a plus de joueurs
+    const response = await request(app).post('/api/v1/jeu/jouer/joueur1'); // joueur1 ne devrait plus exister
+
+    // Vérifier que la réponse retourne bien 404
+    expect(response.status).toBe(404);
+    expect(response.body).toEqual({});
   });
   
 });

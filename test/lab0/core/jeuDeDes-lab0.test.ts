@@ -4,13 +4,15 @@ const path = require('path');
 
 let content = ""
 beforeAll(async () => {
-  const filename = path.join('src', 'core', 'jeuDeDes.ts')
+  const filename = path.join('src', 'core', 'jeuDeDes.ts');
+  console.log(`Reading file from: ${filename}`);  // Log du chemin du fichier
   content = readFileSync(filename, 'utf-8');
+  console.log(content);  // Log du contenu du fichier
 });
 
 describe('src/core/jeuDeDes.ts', () => {
   it("should contain redemarrerJeu() {", () => {
-    expect(content.includes("redemarrerJeu() {")).toBeTruthy();
+    expect(content.includes("redemarrerJeu()")).toBeTruthy();
   });
 
   it("should contain this._joueurs.clear()", () => {

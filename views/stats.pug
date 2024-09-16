@@ -22,6 +22,6 @@ html
                 td(style="text-align: right") #{joueur.lancersGagnes}
                 td(style="text-align: right; font-family: monospace")
                   if joueur.ratio != null
-                    #{joueur.ratio.toFixed(8)}
+                    td(style="text-align: right; font-family: monospace") #{joueur.ratio.toFixed(8)}
                   else
                     | N/A

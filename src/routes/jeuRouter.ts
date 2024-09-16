@@ -56,9 +56,9 @@ export class JeuRouter {
     try {
       const resultat = this._controleurJeu.jouer(nom);
       const resultatObj = JSON.parse(resultat);
-      const key = resultatObj.somme == 7 ? 'win' : 'info';
+      const key = resultatObj.somme <= 10 ? 'win' : 'info';
       req.flash(key,
-        `Résultat pour ${nom}: ${resultatObj.v1} + ${resultatObj.v2} = ${resultatObj.somme}`);
+        `Résultat pour ${nom}: ${resultatObj.v1} + ${resultatObj.v2}  + ${resultatObj.v3}= ${resultatObj.somme}`);
       res.status(200)
         .send({
           message: 'Success',
@@ -66,7 +66,8 @@ export class JeuRouter {
           resultat
         });
     } catch (error) {
-      this._errorCode500(error, req, res);
+      this._errorCode404(error, req, res);
+      
     }
   }
 
@@ -119,6 +120,13 @@ export class JeuRouter {
     req.flash('error', error.message);
     res.status(error.code || 500).json({ error: error.toString() });
   }
+  private _errorCode404(error: any, req: Request, res: Response<any, Record<string, any>>) {
+    // Envoyer une réponse avec un statut 404 et un message clair
+    res.status(error.code || 404).json({ error: error.toString() });
+    req.flash('error', "Le joueur n'existe pas.")
+  }
+  
+
 
   /**
    * Take each handler, and attach to one of the Express.Router's
